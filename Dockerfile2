@@ -1,0 +1,11 @@
+# Usa una imagen base de Docker que incluya Java y otras dependencias necesarias
+FROM liquibase/liquibase:4.23.0
+
+# Crea un directorio de trabajo en el contenedor
+WORKDIR /liquibase
+
+# Copia los archivos de tu proyecto al contenedor (si tienes archivos adicionales)
+COPY . /liquibase
+
+# Ejecuta Liquibase con los comandos deseados
+CMD ["sh", "docker run liquibase/liquibase:4.23.0 --classpath=/liquibase/changelog --url=jdbc:postgresql://127.0.0.1:5432/pruebas --changeLogFile=my_app-wrapper.xml --username=postgres --password=admin update --log-level flag"]
