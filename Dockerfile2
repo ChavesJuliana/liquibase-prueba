@@ -8,4 +8,4 @@ WORKDIR /liquibase
 COPY . /liquibase
 
 # Ejecuta Liquibase con los comandos deseados
-CMD ["sh", "docker run liquibase/liquibase:4.23.0 --classpath=/liquibase/changelog --url=jdbc:postgresql://127.0.0.1:5432/pruebas --changeLogFile=my_app-wrapper.xml --username=postgres --password=admin update --log-level flag"]
+CMD ["sh", "-c", --classpath=/liquibase/changelog --url=jdbc:postgresql://127.0.0.1:5432/pruebas --changeLogFile=my_app-wrapper.xml --username=postgres --password=admin update --log-level flag"]
