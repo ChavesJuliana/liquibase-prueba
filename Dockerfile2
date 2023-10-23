@@ -8,4 +8,4 @@ WORKDIR /liquibase
 COPY . /liquibase
 
 # Ejecuta Liquibase con los comandos deseados
-CMD ["cmd", "/c", "liquibase update --classpath=/liquibase/changelog --url=jdbc:postgresql://127.0.0.1:5432/pruebas --changeLogFile=my_app-wrapper.xml --username=postgres --password=admin --log-level flag"]
+CMD ["cmd", "/c", "liquibase", "update --classpath=/liquibase/changelog --url=jdbc:postgresql://127.0.0.1:5432/pruebas --changeLogFile=my_app-wrapper.xml --username=postgres --password=admin --log-level flag"]
